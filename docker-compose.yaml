@@ -9,7 +9,8 @@ services:
         grafana_image: ${GRAFANA_IMAGE:-grafana-enterprise}
         grafana_version: ${GRAFANA_VERSION:-9.5.3}
     ports:
-      - 3000:3000/tcp
+      - 3050:3000/tcp
     volumes:
+      - /home/dbal/plugins:/var/lib/grafana/plugins
       - ./dist:/var/lib/grafana/plugins/imageine-image-panel
       - ./provisioning:/etc/grafana/provisioning
